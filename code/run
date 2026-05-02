@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -ex
+
+# This is the master script for the capsule. When you click "Reproducible Run", the code in this file will execute.
+jupyter nbconvert \
+  --to html \
+  --execute \
+  --ExecutePreprocessor.allow_errors=True \
+  --ExecutePreprocessor.timeout=-1 \
+  --FilesWriter.build_directory=../results \
+  'KPNC 1. Code for modeling.ipynb' \
+  'KPNC 2. Clinical utility.ipynb' \
+  'KPNC 3. Cost effective.ipynb' \
+  'KPNC Figure 1b.ipynb' \
+  'KPNC Figure 4b.ipynb' \
+  'Other Main Text Figs.ipynb' \
+  'AoU 1. Create Cohort.ipynb' \
+  'AoU 2. EHR Pull using KP Variables.ipynb' \
+  'AoU 3. Medical History Pull.ipynb' \
+  'AoU 4. Generate Outcomes.ipynb' \
+  'AoU 5. Internal Models.ipynb' \
+  'AoU 6. External Validation.ipynb' \
+  'AoU 7. External Val Per-State 12w.ipynb'
